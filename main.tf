@@ -13,7 +13,6 @@ resource "aws_vpc" "main" {
 #Create security group with firewall rules
 resource "aws_security_group" "my-jenkins-security-group-2023" {
   name        = var.security_group
-  type         = var.security_type
   description = "security group for Ec2 instance"
 
   ingress {

@@ -41,8 +41,7 @@ resource "aws_security_group" "my-jenkins-security-group-2023" {
     Name = var.security_group
   }
 }
- 
-resource "aws_instance" "myFirstInstance" {
+ resource "aws_instance" "myFirstInstance" {
   ami           = var.ami_id
   key_name = var.key_name
   instance_type = var.instance_type

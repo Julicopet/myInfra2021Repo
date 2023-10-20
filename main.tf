@@ -11,7 +11,7 @@ resource "aws_vpc" "main" {
 }
 
 #Create security group with firewall rules
-resource "aws_security_group" "my-jenkins-security-group-2023" {
+resource "aws_security_group" "aws_security_group.jenkins-sg-2022.id" {
   name        = var.security_group
   description = "security group for Ec2 instance"
 
@@ -45,7 +45,7 @@ resource "aws_security_group" "my-jenkins-security-group-2023" {
   ami           = var.ami_id
   key_name = var.key_name
   instance_type = var.instance_type
-  vpc_security_group_ids = [my-jenkins-security-group-2023]
+  vpc_security_group_ids = [aws_security_group.jenkins-sg-2022.id]
   tags= {
     Name = var.tag_name
   }

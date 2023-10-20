@@ -13,8 +13,7 @@ resource "aws_vpc" "main" {
 #Create security group with firewall rules
 resource "aws_security_group" "jenkins-sg-2022" {
   name        = var.security_group
-  description = "security group for Ec2 instance
-}
+  description = "security group for Ec2 instance"
 
   ingress {
     from_port   = 8080
@@ -37,6 +36,12 @@ resource "aws_security_group" "jenkins-sg-2022" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+  tags= {
+    Name = var.security_group
+  }
+}
+
 resource "aws_instance" "myFirstInstance" {
   ami           = var.ami_id
   key_name = var.key_name

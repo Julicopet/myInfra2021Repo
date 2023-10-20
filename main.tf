@@ -36,12 +36,7 @@ resource "aws_security_group" "jenkins-sg-2022" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
-  tags= {
-    Name = var.security_group
-  }
-}
- resource "aws_instance" "myFirstInstance" {
+resource "aws_instance" "myFirstInstance" {
   ami           = var.ami_id
   key_name = var.key_name
   instance_type = var.instance_type

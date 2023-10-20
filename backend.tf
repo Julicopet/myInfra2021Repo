@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "juliet-dev-tf-state-bucket"
+    bucket = "xyz-123-juliet"
     key = "main"
     region = "us-east-2"
     dynamodb_table = "juliet-dynamoldb-table"

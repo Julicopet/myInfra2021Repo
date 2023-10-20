@@ -41,7 +41,7 @@ resource "aws_security_group" "my-jenkins-security-group-2023" {
     Name = var.security_group
   }
 }
-
+ vpc = true
 resource "aws_instance" "myFirstInstance" {
   ami           = var.ami_id
   key_name = var.key_name
